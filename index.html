@@ -22,7 +22,77 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Russell Thompson - AI & Automation Leader</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Russell Thompson",
+        "jobTitle": "Chief Engineer & Automation Lead",
+        "url": "https://russellthompson.pages.dev",
+        "image": "https://russellthompson.pages.dev/avatar.jpg",
+        "sameAs": [
+            "https://www.linkedin.com/in/russell-thompson89",
+            "https://x.com/platformpilot89",
+            "https://platformpilot.blogspot.com"
+        ],
+        "knowsAbout": [
+            "Artificial Intelligence",
+            "Automation",
+            "DevSecOps",
+            "Platform Engineering",
+            "Site Reliability Engineering",
+            "IT Service Management",
+            "Agile Methodologies"
+        ],
+        "description": "Chief Engineer & Automation Lead at a Fortune 500 company, specializing in AI, DevSecOps, and Platform Engineering."
+    }
+    </script>
+    <!-- Self-hosted Fonts -->
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url(fonts/inter-300.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(fonts/inter-400.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(fonts/inter-600.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(fonts/inter-700.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Orbitron';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(fonts/orbitron-400.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Orbitron';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(fonts/orbitron-700.ttf) format('truetype');
+        }
+    </style>
     <style>
         /* Tailwind-inspired utility classes - production ready */
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -168,6 +238,28 @@
             100% { transform: rotateX(360deg) rotateY(360deg); }
         }
 
+
+        /* Avatar */
+        .hero-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid #00ffff;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.15);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            animation: avatarGlow 3s ease-in-out infinite alternate;
+        }
+        @keyframes avatarGlow {
+            0% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.15); }
+            100% { box-shadow: 0 0 30px rgba(0, 255, 255, 0.6), 0 0 60px rgba(0, 255, 255, 0.25); }
+        }
+        @media (min-width: 768px) {
+            .hero-avatar {
+                width: 170px;
+                height: 170px;
+            }
+        }
 
         /* Hero Section */
         #hero {
@@ -535,6 +627,7 @@
     <section id="hero">
         <canvas id="particle-canvas"></canvas>
         <div class="hero-content container mx-auto px-4">
+            <img src="avatar.jpg" alt="Russell Thompson - Chief Engineer & Automation Lead" class="hero-avatar mx-auto" width="170" height="170">
             <h1 class="font-orbitron hero-title">Russell Thompson</h1>
             <p id="hero-subtitle-text" class="hero-subtitle"></p>
         </div>
@@ -711,6 +804,11 @@
             <h2 class="font-orbitron section-title">Writing & Insights</h2>
             <p class="text-center text-lg text-gray-300 mb-8 max-w-2xl mx-auto">Exploring the intersection of AI, automation, and platform engineering on the <a href="https://platformpilot.blogspot.com/" target="_blank" rel="noopener noreferrer" style="color: #00ffff; text-decoration: none; border-bottom: 1px solid rgba(0,255,255,0.3);">AIAfterHours</a> blog.</p>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <a href="blog/ai-agents-2026.html" class="blog-card p-6 rounded-lg">
+                    <span class="blog-date">Feb 2026</span>
+                    <h3 class="font-orbitron text-lg text-cyan-400 mt-2 mb-2">AI Agents Are Here. Now What?</h3>
+                    <p class="text-gray-300 text-sm">The shift from chatbots to autonomous AI agents is rewriting enterprise engineering. What it means for platform teams and automation leaders.</p>
+                </a>
                 <a href="https://platformpilot.blogspot.com/2024/11/from-science-fiction-to-reality.html" target="_blank" rel="noopener noreferrer" class="blog-card p-6 rounded-lg">
                     <span class="blog-date">Nov 2024</span>
                     <h3 class="font-orbitron text-lg text-cyan-400 mt-2 mb-2">From Science Fiction to Reality</h3>
@@ -720,11 +818,6 @@
                     <span class="blog-date">Oct 2023</span>
                     <h3 class="font-orbitron text-lg text-cyan-400 mt-2 mb-2">Future of Infrastructure Automation</h3>
                     <p class="text-gray-300 text-sm">Exploring how generative AI is transforming infrastructure management — writing code, generating configs, and predicting bottlenecks.</p>
-                </a>
-                <a href="https://platformpilot.blogspot.com/2023/10/the-power-of-platform-engineering.html" target="_blank" rel="noopener noreferrer" class="blog-card p-6 rounded-lg">
-                    <span class="blog-date">Oct 2023</span>
-                    <h3 class="font-orbitron text-lg text-cyan-400 mt-2 mb-2">The Power of Platform Engineering</h3>
-                    <p class="text-gray-300 text-sm">Why internal developer platforms are the backbone of modern engineering organisations and how they accelerate delivery.</p>
                 </a>
             </div>
             <div class="text-center mt-8">
