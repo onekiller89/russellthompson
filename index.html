@@ -6,16 +6,21 @@
     <meta name="description" content="Russell Thompson, Chief Engineer & Automation Lead at a Fortune 500 company, specializing in AI, DevSecOps, and Platform Engineering to drive technological innovation and efficiency.">
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="YOUR_WEBSITE_URL_HERE"> <!-- Replace with your actual URL -->
+    <meta property="og:url" content="https://russellthompson.pages.dev/">
     <meta property="og:title" content="Russell Thompson - AI & Automation Leader">
-    <meta property="og:description" content="Driving transformative IT services through AI, automation, and innovative engineering.">
-    <meta property="og:image" content="YOUR_PREVIEW_IMAGE_URL_HERE"> <!-- Replace with a URL to a preview image -->
+    <meta property="og:description" content="Chief Engineer & Automation Lead at a Fortune 500 company. Driving transformative IT services through AI, automation, and innovative engineering.">
+    <meta property="og:image" content="https://russellthompson.pages.dev/og-image.svg">
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="YOUR_WEBSITE_URL_HERE"> <!-- Replace with your actual URL -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://russellthompson.pages.dev/">
     <meta property="twitter:title" content="Russell Thompson - AI & Automation Leader">
-    <meta property="twitter:description" content="Driving transformative IT services through AI, automation, and innovative engineering.">
-    <meta property="twitter:image" content="YOUR_PREVIEW_IMAGE_URL_HERE"> <!-- Replace with a URL to a preview image -->
+    <meta property="twitter:description" content="Chief Engineer & Automation Lead at a Fortune 500 company. Driving transformative IT services through AI, automation, and innovative engineering.">
+    <meta property="twitter:image" content="https://russellthompson.pages.dev/og-image.svg">
+    <meta property="twitter:creator" content="@platformpilot89">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://russellthompson.pages.dev/">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Russell Thompson - AI & Automation Leader</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -386,26 +391,80 @@
             }
         }
 
-        /* Skill bar animation */
-        .skill-bar-container {
-            width: 100%;
-            background-color: rgba(0, 123, 255, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-            border: 1px solid rgba(0,123,255,0.3);
-        }
-        .skill-bar {
-            height: 20px;
-            background: linear-gradient(90deg, #007bff, #00ffff);
-            width: 0; /* Start at 0, animate with JS */
-            border-radius: 4px;
-            text-align: right;
-            padding-right: 5px;
-            line-height: 20px;
+        /* Skip Navigation */
+        .skip-nav {
+            position: absolute;
+            top: -100%;
+            left: 0;
+            background: #00ffff;
             color: #0a0c10;
-            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            z-index: 10000;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+        }
+        .skip-nav:focus {
+            top: 0;
+        }
+
+        /* Blog Cards */
+        .blog-card {
+            background-color: rgba(17, 24, 39, 0.8);
+            border: 1px solid #007bff;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            backdrop-filter: blur(5px);
+            text-decoration: none;
+            display: block;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 123, 255, 0.5), 0 0 15px #00ffff;
+            border-color: #00ffff;
+        }
+        .blog-date {
+            font-size: 0.75rem;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Tech Stack Grid */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+        .tech-item {
+            background-color: rgba(17, 24, 39, 0.6);
+            border: 1px solid rgba(0, 123, 255, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .tech-item:hover {
+            border-color: #00ffff;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        .tech-icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .tech-label {
             font-size: 0.8rem;
-            transition: width 1.5s ease-out;
+            color: #d1d5db;
+            font-weight: 500;
+        }
+        .tech-category {
+            font-size: 0.65rem;
+            color: #00ffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
         }
 
         /* Footer */
@@ -417,6 +476,9 @@
     </style>
 </head>
 <body class="antialiased">
+
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#about" class="skip-nav" aria-label="Skip to main content">Skip to content</a>
 
     <div id="preloader">
         <div class="loader-cube">
@@ -443,6 +505,7 @@
                         <a href="#projects" class="nav-link">Projects</a>
                         <a href="#experience" class="nav-link">Experience</a>
                         <a href="#vision" class="nav-link">Vision</a>
+                        <a href="#writing" class="nav-link">Writing</a>
                         <a href="#connect" class="nav-link">Connect</a>
                     </div>
                 </div>
@@ -463,6 +526,7 @@
                 <a href="#projects" class="nav-link block">Projects</a>
                 <a href="#experience" class="nav-link block">Experience</a>
                 <a href="#vision" class="nav-link block">Vision</a>
+                <a href="#writing" class="nav-link block">Writing</a>
                 <a href="#connect" class="nav-link block">Connect</a>
             </div>
         </div>
@@ -493,36 +557,59 @@
     <section id="expertise" class="section bg-opacity-50" style="background-color: rgba(17, 24, 39, 0.5);">
         <div class="container mx-auto px-4">
             <h2 class="font-orbitron section-title">Core Competencies</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <div class="custom-card p-6 rounded-lg">
                     <h3 class="font-orbitron text-xl text-cyan-400 mb-3">AI & Automation Strategy</h3>
-                    <p class="text-gray-300">Designing and deploying AI-driven automation to streamline complex workflows and boost operational output.</p>
-                    <div class="mt-4 skill-bar-container"><div class="skill-bar" data-skill="95%">95%</div></div>
+                    <p class="text-gray-300">Designing and deploying AI-driven automation to streamline complex workflows and boost operational output across enterprise environments.</p>
                 </div>
                 <div class="custom-card p-6 rounded-lg">
                     <h3 class="font-orbitron text-xl text-cyan-400 mb-3">DevSecOps & SRE</h3>
-                    <p class="text-gray-300">Integrating security and reliability into the entire development lifecycle for robust, resilient systems.</p>
-                    <div class="mt-4 skill-bar-container"><div class="skill-bar" data-skill="90%">90%</div></div>
+                    <p class="text-gray-300">Integrating security and reliability into the entire development lifecycle for robust, resilient systems serving critical government clients.</p>
                 </div>
                 <div class="custom-card p-6 rounded-lg">
                     <h3 class="font-orbitron text-xl text-cyan-400 mb-3">Platform Engineering</h3>
-                    <p class="text-gray-300">Building scalable and efficient platforms that empower development teams and accelerate innovation.</p>
-                    <div class="mt-4 skill-bar-container"><div class="skill-bar" data-skill="85%">85%</div></div>
+                    <p class="text-gray-300">Building internal developer platforms that automate tedious tasks, reduce cognitive load, and accelerate application delivery.</p>
                 </div>
                 <div class="custom-card p-6 rounded-lg">
                     <h3 class="font-orbitron text-xl text-cyan-400 mb-3">Agile & Disciplined Agile</h3>
-                    <p class="text-gray-300">Championing agile methodologies to foster adaptive, collaborative, and high-performing teams.</p>
-                    <div class="mt-4 skill-bar-container"><div class="skill-bar" data-skill="90%">90%</div></div>
+                    <p class="text-gray-300">Championing agile methodologies to foster adaptive, collaborative, and high-performing teams at enterprise scale.</p>
                 </div>
                 <div class="custom-card p-6 rounded-lg">
                     <h3 class="font-orbitron text-xl text-cyan-400 mb-3">ITSM & Service Delivery</h3>
-                    <p class="text-gray-300">Optimising IT service management processes for excellence in delivery and user satisfaction.</p>
-                    <div class="mt-4 skill-bar-container"><div class="skill-bar" data-skill="88%">88%</div></div>
+                    <p class="text-gray-300">Optimising IT service management processes for excellence in delivery and user satisfaction across large-scale engagements.</p>
                 </div>
                 <div class="custom-card p-6 rounded-lg">
                     <h3 class="font-orbitron text-xl text-cyan-400 mb-3">Innovation Leadership</h3>
-                    <p class="text-gray-300">Driving technological advancement and fostering a culture of innovation within organisations.</p>
-                    <div class="mt-4 skill-bar-container"><div class="skill-bar" data-skill="92%">92%</div></div>
+                    <p class="text-gray-300">Driving adoption of emerging technologies and fostering a culture of continuous improvement within organisations.</p>
+                </div>
+            </div>
+
+            <!-- Technology & Tools -->
+            <h3 class="font-orbitron text-2xl text-white text-center mb-8" style="text-shadow: 0 0 10px #007bff;">Technologies & Tools</h3>
+            <div class="max-w-4xl mx-auto">
+                <span class="tech-category">AI & Automation</span>
+                <div class="tech-grid mb-8">
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="ChatGPT & LLMs">&#x1F9E0;</div><div class="tech-label">LLMs / GPT</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Python">&#x1F40D;</div><div class="tech-label">Python</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Ansible">&#x2699;&#xFE0F;</div><div class="tech-label">Ansible</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Power Automate">&#x26A1;</div><div class="tech-label">Power Automate</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="ServiceNow">&#x1F4CB;</div><div class="tech-label">ServiceNow</div></div>
+                </div>
+                <span class="tech-category">DevSecOps & Platform</span>
+                <div class="tech-grid mb-8">
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Docker">&#x1F433;</div><div class="tech-label">Docker</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Kubernetes">&#x2638;&#xFE0F;</div><div class="tech-label">Kubernetes</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Terraform">&#x1F3D7;&#xFE0F;</div><div class="tech-label">Terraform</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="CI/CD Pipelines">&#x1F504;</div><div class="tech-label">CI/CD</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Git">&#x1F500;</div><div class="tech-label">Git</div></div>
+                </div>
+                <span class="tech-category">Cloud & Infrastructure</span>
+                <div class="tech-grid">
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Azure">&#x2601;&#xFE0F;</div><div class="tech-label">Azure</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="AWS">&#x1F310;</div><div class="tech-label">AWS</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Linux">&#x1F427;</div><div class="tech-label">Linux</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Networking">&#x1F5A7;</div><div class="tech-label">Networking</div></div>
+                    <div class="tech-item"><div class="tech-icon" role="img" aria-label="Monitoring">&#x1F4CA;</div><div class="tech-label">Monitoring</div></div>
                 </div>
             </div>
         </div>
@@ -554,29 +641,50 @@
         <div class="container mx-auto px-4">
             <h2 class="font-orbitron section-title">Key Projects & Achievements</h2>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project Card 1 Example -->
                 <div class="custom-card p-6 rounded-lg">
-                    <h3 class="font-orbitron text-xl text-cyan-400 mb-2">AI-Powered Anomaly Detection System</h3>
-                    <p class="text-sm text-gray-400 mb-3">Role: Lead Architect | Federal Government Client</p>
-                    <p class="text-gray-300 mb-4">Spearheaded the design and implementation of an AI-driven system that reduced critical incident response times by 30% through proactive anomaly detection in network traffic.</p>
-                    <div class="space-x-2 mt-auto">
-                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">AI/ML</span>
+                    <h3 class="font-orbitron text-xl text-cyan-400 mb-2">AI-Powered Anomaly Detection</h3>
+                    <p class="text-sm text-gray-400 mb-3">Lead Architect | Federal Government Client</p>
+                    <p class="text-gray-300 mb-4">Designed and implemented a machine learning pipeline for proactive anomaly detection in network traffic, integrating with existing SIEM tooling. Reduced critical incident response times by 30% and cut false-positive alerts, freeing up analyst capacity.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto;">
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">ML Ops</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">SIEM</span>
                         <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Cybersecurity</span>
-                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Platform Engineering</span>
                     </div>
                 </div>
-                <!-- Project Card 2 Example -->
                 <div class="custom-card p-6 rounded-lg">
                     <h3 class="font-orbitron text-xl text-cyan-400 mb-2">Enterprise Automation Framework</h3>
-                    <p class="text-sm text-gray-400 mb-3">Role: Automation Lead | Fortune 500 Company</p>
-                    <p class="text-gray-300 mb-4">Architected and deployed a scalable automation framework that streamlined IT service management processes, resulting in a 25% increase in operational efficiency across multiple teams.</p>
-                     <div class="space-x-2 mt-auto">
-                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Automation</span>
-                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">DevSecOps</span>
-                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">ITSM</span>
+                    <p class="text-sm text-gray-400 mb-3">Automation Lead | Fortune 500 Company</p>
+                    <p class="text-gray-300 mb-4">Architected a reusable automation framework using Ansible, Python, and ServiceNow integrations to standardise infrastructure provisioning and ITSM workflows. Delivered a 25% efficiency gain across multiple operations teams.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto;">
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Ansible</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">ServiceNow</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Python</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">CI/CD</span>
                     </div>
                 </div>
-                <!-- Add more project cards as needed -->
+                <div class="custom-card p-6 rounded-lg">
+                    <h3 class="font-orbitron text-xl text-cyan-400 mb-2">Internal Developer Platform</h3>
+                    <p class="text-sm text-gray-400 mb-3">Platform Lead | Enterprise Scale</p>
+                    <p class="text-gray-300 mb-4">Built an internal developer platform to reduce cognitive load on engineering teams, providing self-service infrastructure provisioning, automated compliance checks, and standardised deployment pipelines.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto;">
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Kubernetes</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Terraform</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Docker</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">GitOps</span>
+                    </div>
+                </div>
+                <div class="custom-card p-6 rounded-lg">
+                    <h3 class="font-orbitron text-xl text-cyan-400 mb-2">AI Integration for DevOps</h3>
+                    <p class="text-sm text-gray-400 mb-3">Technical Lead | Cross-functional Initiative</p>
+                    <p class="text-gray-300 mb-4">Led the integration of LLM-based tools into the DevOps lifecycle, enabling AI-assisted code review, automated documentation generation, and intelligent incident triage across engineering teams.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto;">
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">LLMs</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">DevOps</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">Automation</span>
+                        <span class="inline-block bg-cyan-700 bg-opacity-70 text-cyan-100 text-xs px-3 py-1 rounded-full">CI/CD</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -594,6 +702,35 @@
                 <p class="text-xl md:text-2xl font-orbitron text-blue-400">
                     "The future belongs to those who can see the potential of today's innovations and have the courage to build tomorrow's realities."
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="writing" class="section">
+        <div class="container mx-auto px-4">
+            <h2 class="font-orbitron section-title">Writing & Insights</h2>
+            <p class="text-center text-lg text-gray-300 mb-8 max-w-2xl mx-auto">Exploring the intersection of AI, automation, and platform engineering on the <a href="https://platformpilot.blogspot.com/" target="_blank" rel="noopener noreferrer" style="color: #00ffff; text-decoration: none; border-bottom: 1px solid rgba(0,255,255,0.3);">AIAfterHours</a> blog.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <a href="https://platformpilot.blogspot.com/2024/11/from-science-fiction-to-reality.html" target="_blank" rel="noopener noreferrer" class="blog-card p-6 rounded-lg">
+                    <span class="blog-date">Nov 2024</span>
+                    <h3 class="font-orbitron text-lg text-cyan-400 mt-2 mb-2">From Science Fiction to Reality</h3>
+                    <p class="text-gray-300 text-sm">How AI is transforming vision into practical reality — the evolution from narrow AI toward AGI and its potential to reshape society.</p>
+                </a>
+                <a href="https://platformpilot.blogspot.com/2023/10/the-future-of-infrastructure-automation.html" target="_blank" rel="noopener noreferrer" class="blog-card p-6 rounded-lg">
+                    <span class="blog-date">Oct 2023</span>
+                    <h3 class="font-orbitron text-lg text-cyan-400 mt-2 mb-2">Future of Infrastructure Automation</h3>
+                    <p class="text-gray-300 text-sm">Exploring how generative AI is transforming infrastructure management — writing code, generating configs, and predicting bottlenecks.</p>
+                </a>
+                <a href="https://platformpilot.blogspot.com/2023/10/the-power-of-platform-engineering.html" target="_blank" rel="noopener noreferrer" class="blog-card p-6 rounded-lg">
+                    <span class="blog-date">Oct 2023</span>
+                    <h3 class="font-orbitron text-lg text-cyan-400 mt-2 mb-2">The Power of Platform Engineering</h3>
+                    <p class="text-gray-300 text-sm">Why internal developer platforms are the backbone of modern engineering organisations and how they accelerate delivery.</p>
+                </a>
+            </div>
+            <div class="text-center mt-8">
+                <a href="https://platformpilot.blogspot.com/" target="_blank" rel="noopener noreferrer" class="btn-futuristic" aria-label="Read all articles on the AIAfterHours blog">
+                    Read All Articles
+                </a>
             </div>
         </div>
     </section>
@@ -897,32 +1034,13 @@
         }
 
 
-        // --- Scroll Animations for Sections & Skill Bars ---
+        // --- Scroll Animations for Sections ---
         const scrollSections = document.querySelectorAll('.section');
-        const skillBars = document.querySelectorAll('.skill-bar');
 
         const sectionObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    
-                    if (entry.target.id === 'expertise') {
-                        skillBars.forEach(bar => {
-                            // Ensure animation only runs once or resets if you prefer
-                            if (bar.style.width !== bar.getAttribute('data-skill')) {
-                                bar.style.width = bar.getAttribute('data-skill');
-                            }
-                        });
-                    }
-                    // observer.unobserve(entry.target); // Keep observing for potential re-animations if desired
-                } else {
-                     // Optional: Reset animation if section scrolls out of view and you want it to replay
-                     // entry.target.classList.remove('visible');
-                     // if (entry.target.id === 'expertise') {
-                     //    skillBars.forEach(bar => {
-                     //        bar.style.width = '0%'; 
-                     //    });
-                     // }
                 }
             });
         }, { threshold: 0.15 }); // Trigger when 15% of the section is visible

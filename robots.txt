@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://russellthompson.pages.dev/sitemap.xml
