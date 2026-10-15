@@ -2,7 +2,7 @@
 
 Personal portfolio site for Russell Thompson, focused on AI enablement, automation, and platform engineering.
 
-Incoming AI Enablement Lead, Civil, starting **2 November 2026**. This is a future appointment, not a claim that the role has already started.
+Incoming AI Enablement Lead, starting **2 November 2026**. This is a future appointment, not a claim that the role has already started.
 
 Featured personal projects include [MegaMind](https://github.com/onekiller89/MegaMind) and an OpenClaw operations case study.
 
